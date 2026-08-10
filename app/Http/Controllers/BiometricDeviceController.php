@@ -221,7 +221,4 @@ class BiometricDeviceController extends Controller
 
         return back();
     }
-
-        return back();
-    }
 }
