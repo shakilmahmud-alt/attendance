@@ -6,7 +6,7 @@
         <div class="card overflow-hidden account-card mx-3">
             <div class="bg-primary p-4 text-white text-center position-relative">
                 <h4 class="font-20 m-b-5">Welcome Back !</h4>
-                <p class="text-white-50 mb-4">Sign in Sign in as Admin to AMS</p>
+                <p class="text-white-50 mb-4">Sign in as Admin to AMS</p>
                 <a href="{{ route('welcome') }}" class="logo logo-admin">
                     <h1>A</h1>
                 </a>
