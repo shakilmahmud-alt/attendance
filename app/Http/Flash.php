@@ -23,15 +23,18 @@ class Flash{
         }
         public function error($title, $message)
     {
-        return $this->create($title,$message, 'error');
-        
-        }
+        return $this->create($title, $message, 'error');
+    }
 
-        public function overlay($title, $message, $level ='success')
-        {
-            return $this->create($title,$message, $level, 'flash_message_overlay');
-            
-            }
+    public function warning($title, $message)
+    {
+        return $this->create($title, $message, 'warning');
+    }
+
+    public function overlay($title, $message, $level = 'success')
+    {
+        return $this->create($title, $message, $level, 'flash_message_overlay');
+    }
 }
 
 
