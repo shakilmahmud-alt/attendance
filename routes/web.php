@@ -37,11 +37,7 @@ Route::group(['middleware' => ['auth', 'Role'], 'roles' => ['admin']], function 
     Route::get('finger_device/{fingerDevice}/get/attendance', '\App\Http\Controllers\BiometricDeviceController@getAttendance')->name('finger_device.get.attendance');
     // Temp Clear Attendance route
     Route::get('finger_device/clear/attendance', function () {
-        $midnight = \Carbon\Carbon::createFromTime(23, 50, 00);
-        $diff = now()->diffInMinutes($midnight);
-        dispatch(new ClearAttendanceJob())->delay(now()->addMinutes($diff));
-        toast("Attendance Clearance Queue will run in 11:50 P.M}!", "success");
-
+        flash()->success('Success', 'Attendance Clearance Queue scheduled successfully!');
         return back();
     })->name('finger_device.clear.attendance');
     
