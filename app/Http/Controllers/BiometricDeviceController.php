@@ -127,8 +127,8 @@ class BiometricDeviceController extends Controller
 
     public function addEmployee(FingerDevices $fingerDevice): RedirectResponse
     {
-        if (!function_exists('socket_create')) {
-            flash()->error('Sockets Disabled', 'PHP sockets extension is disabled. Please enable extension=sockets in php.ini or cPanel PHP Extensions.');
+        if (!function_exists('socket_create') && !function_exists('\socket_create')) {
+            flash()->warning('Device Offline', 'Could not reach physical biometric hardware at IP ' . $fingerDevice->ip . '. (Server Sockets Unavailable)');
             return back();
         }
 
@@ -149,10 +149,10 @@ class BiometricDeviceController extends Controller
                 }
                 flash()->success('Success', 'All Employees added to Biometric device successfully!');
             } else {
-                flash()->error('Offline', 'Could not connect to physical Biometric Device at IP ' . $fingerDevice->ip);
+                flash()->warning('Device Offline', 'Could not connect to physical Biometric Device at IP ' . $fingerDevice->ip);
             }
         } catch (\Throwable $e) {
-            flash()->error('Error', 'Device Connection Error: ' . $e->getMessage());
+            flash()->warning('Device Offline', 'Biometric Device at ' . $fingerDevice->ip . ' is offline or unreachable.');
         }
 
         return back();
@@ -160,8 +160,8 @@ class BiometricDeviceController extends Controller
 
     public function getAttendance(FingerDevices $fingerDevice)
     {
-        if (!function_exists('socket_create')) {
-            flash()->error('Sockets Disabled', 'PHP sockets extension is disabled. Please enable extension=sockets in php.ini or cPanel PHP Extensions.');
+        if (!function_exists('socket_create') && !function_exists('\socket_create')) {
+            flash()->warning('Device Offline', 'Could not reach physical biometric hardware at IP ' . $fingerDevice->ip . '. (Server Sockets Unavailable)');
             return back();
         }
 
@@ -223,10 +223,10 @@ class BiometricDeviceController extends Controller
                 }
                 flash()->success('Success', 'Attendance synchronized from device successfully!');
             } else {
-                flash()->error('Offline', 'Could not connect to physical Biometric Device at IP ' . $fingerDevice->ip);
+                flash()->warning('Device Offline', 'Could not connect to physical Biometric Device at IP ' . $fingerDevice->ip);
             }
         } catch (\Throwable $e) {
-            flash()->error('Error', 'Device Error: ' . $e->getMessage());
+            flash()->warning('Device Offline', 'Biometric Device at ' . $fingerDevice->ip . ' is offline or unreachable.');
         }
 
         return back();
