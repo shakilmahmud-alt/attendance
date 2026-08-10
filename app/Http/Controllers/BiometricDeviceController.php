@@ -127,6 +127,11 @@ class BiometricDeviceController extends Controller
 
     public function addEmployee(FingerDevices $fingerDevice): RedirectResponse
     {
+        if (!function_exists('socket_create')) {
+            flash()->error('Sockets Disabled', 'PHP sockets extension is disabled. Please enable extension=sockets in php.ini or cPanel PHP Extensions.');
+            return back();
+        }
+
         try {
             $device = new ZKTeco($fingerDevice->ip, 4370);
 
@@ -155,6 +160,11 @@ class BiometricDeviceController extends Controller
 
     public function getAttendance(FingerDevices $fingerDevice)
     {
+        if (!function_exists('socket_create')) {
+            flash()->error('Sockets Disabled', 'PHP sockets extension is disabled. Please enable extension=sockets in php.ini or cPanel PHP Extensions.');
+            return back();
+        }
+
         try {
             $device = new ZKTeco($fingerDevice->ip, 4370);
 
