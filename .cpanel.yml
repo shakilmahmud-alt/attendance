@@ -1,7 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/aliatayee/public_html/projects
-    - /bin/cp -r * $DEPLOYPATH #copy all from root
-#    - /bin/cp -r ./public/* $DEPLOYPATH/public_html/
-    - /bin/cp ./public/js/*.js $DEPLOYPATH/public_html/js
-    - /bin/cp ./public/css/*.css $DEPLOYPATH/public_html/css
+    - export DEPLOYPATH=/home/kidspara/attendance.kidsparadise.com.bd
+    - /bin/cp -r * $DEPLOYPATH
