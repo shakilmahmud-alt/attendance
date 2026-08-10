@@ -94,8 +94,8 @@ class DatabaseSeeder extends Seeder
 
         // 4. Create Biometric Fingerprint Devices
         FingerDevices::firstOrCreate(
-            ['serialNumber' => 'ZKT-8832001'],
-            ['name' => 'Main Entrance Device', 'ip' => '192.168.1.201']
+            ['serialNumber' => 'A8N5192261203'],
+            ['name' => 'ZKTeco K40 (Main Entrance)', 'ip' => '192.168.1.201']
         );
         FingerDevices::firstOrCreate(
             ['serialNumber' => 'ZKT-8832002'],
