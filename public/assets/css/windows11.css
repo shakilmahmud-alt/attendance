@@ -1,0 +1,569 @@
+/* ==========================================================================
+   Windows 11 Fluent Design Theme for Attendance Management System (AMS)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Windows 11 Fluent Palette */
+  --win-bg: #f3f4f8;
+  --win-surface: #ffffff;
+  --win-surface-alt: #f8f9fc;
+  --win-text-primary: #1c1c1c;
+  --win-text-secondary: #5d5d5d;
+  --win-border: rgba(0, 0, 0, 0.08);
+  --win-border-strong: rgba(0, 0, 0, 0.14);
+
+  /* Win 11 Accent Color */
+  --win-accent: #0078d4;
+  --win-accent-hover: #0067b8;
+  --win-accent-active: #005a9e;
+  --win-accent-light: #eef4fc;
+
+  /* Button Colors (Preserving Original Action Intent) */
+  --btn-primary-bg: #0078d4;
+  --btn-primary-hover: #0067b8;
+  
+  --btn-success-bg: #107c41;
+  --btn-success-hover: #0f703b;
+
+  --btn-danger-bg: #c42b1c;
+  --btn-danger-hover: #b32617;
+
+  --btn-warning-bg: #d97706;
+  --btn-warning-hover: #b45309;
+
+  --btn-info-bg: #0284c7;
+  --btn-info-hover: #0369a1;
+
+  --btn-purple-bg: #6d28d9;
+  --btn-purple-hover: #5b21b6;
+
+  /* Windows 11 Shadows */
+  --win-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --win-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --win-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+
+  /* Border Radius Tokens */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+}
+
+/* Base Body Styles */
+body {
+  font-family: 'Segoe UI Variable', 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background-color: var(--win-bg) !important;
+  color: var(--win-text-primary) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wrapper {
+  background-color: var(--win-bg) !important;
+}
+
+.content-page {
+  background-color: var(--win-bg) !important;
+}
+
+.content-page .content {
+  padding-top: 80px;
+}
+
+/* ==========================================================================
+   1. Windows 11 Header / Topbar
+   ========================================================================== */
+.topbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--win-border) !important;
+  box-shadow: var(--win-shadow-sm) !important;
+  height: 64px;
+}
+
+.topbar-left {
+  background: var(--win-accent) !important;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.topbar-left .logo {
+  line-height: 64px;
+}
+
+.topbar-left h1 {
+  font-family: 'Segoe UI', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  font-size: 22px !important;
+  margin: 0 !important;
+}
+
+.navbar-custom {
+  background: transparent !important;
+  min-height: 64px;
+}
+
+.navbar-custom .nav-link {
+  line-height: 64px;
+  color: var(--win-text-primary) !important;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: var(--radius-md);
+}
+
+.app-search .form-control {
+  background-color: #f3f4f8 !important;
+  border: 1px solid var(--win-border) !important;
+  border-radius: 20px !important;
+  color: var(--win-text-primary) !important;
+  font-size: 13px;
+  padding-left: 16px;
+  transition: all 0.2s ease;
+}
+
+.app-search .form-control:focus {
+  background-color: #ffffff !important;
+  border-color: var(--win-accent) !important;
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2) !important;
+}
+
+.app-search button {
+  color: var(--win-text-secondary);
+}
+
+/* ==========================================================================
+   2. Windows 11 Sidebar / Navigation
+   ========================================================================== */
+.left.side-menu {
+  background: #ffffff !important;
+  border-right: 1px solid var(--win-border) !important;
+  box-shadow: 1px 0 6px rgba(0, 0, 0, 0.02) !important;
+  padding-top: 12px;
+}
+
+#sidebar-menu > ul > li > a {
+  color: #3b3b3b !important;
+  font-family: 'Segoe UI', 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 20px;
+  margin: 2px 10px;
+  border-radius: var(--radius-md);
+  transition: all 0.15s ease;
+}
+
+#sidebar-menu > ul > li > a:hover {
+  background-color: #f0f3f9 !important;
+  color: var(--win-accent) !important;
+}
+
+#sidebar-menu > ul > li > a.mm-active,
+#sidebar-menu > ul > li > a.active {
+  background-color: var(--win-accent-light) !important;
+  color: var(--win-accent) !important;
+  font-weight: 600;
+  position: relative;
+}
+
+#sidebar-menu > ul > li > a.mm-active::before,
+#sidebar-menu > ul > li > a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 3.5px;
+  background-color: var(--win-accent);
+  border-radius: 4px;
+}
+
+#sidebar-menu .menu-title {
+  color: var(--win-text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 14px 20px 6px;
+}
+
+#sidebar-menu ul li a i {
+  font-size: 16px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.submenu li a {
+  padding: 8px 20px 8px 45px !important;
+  border-radius: var(--radius-md) !important;
+  font-size: 13px !important;
+}
+
+.submenu li a:hover {
+  background-color: #f0f3f9 !important;
+  color: var(--win-accent) !important;
+}
+
+/* ==========================================================================
+   3. Windows 11 Cards & Panels
+   ========================================================================== */
+.card, .card-body, .panel {
+  background: var(--win-surface) !important;
+  border: 1px solid var(--win-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--win-shadow-md) !important;
+  transition: all 0.2s ease;
+}
+
+.card-header {
+  background: var(--win-surface-alt) !important;
+  border-bottom: 1px solid var(--win-border) !important;
+  border-top-left-radius: var(--radius-lg) !important;
+  border-top-right-radius: var(--radius-lg) !important;
+  font-weight: 600;
+  color: var(--win-text-primary);
+}
+
+.mini-stat {
+  background: var(--win-surface) !important;
+  border: 1px solid var(--win-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--win-shadow-md) !important;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mini-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--win-shadow-lg) !important;
+}
+
+.mini-stat .mini-stat-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   4. Windows 11 Fluent Buttons (Preserving Intent Colors)
+   ========================================================================== */
+.btn {
+  font-family: 'Segoe UI', 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+  border-radius: var(--radius-md) !important;
+  padding: 7px 16px !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.15s cubic-bezier(0.1, 0.9, 0.2, 1) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12) !important;
+}
+
+.btn:active, .btn.active {
+  transform: scale(0.98) translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Primary Button (Blue) */
+.btn-primary, .btn-custom {
+  background-color: var(--btn-primary-bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+}
+.btn-primary:hover, .btn-custom:hover {
+  background-color: var(--btn-primary-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Success Button (Green) */
+.btn-success {
+  background-color: var(--btn-success-bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+}
+.btn-success:hover {
+  background-color: var(--btn-success-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Danger Button (Red) */
+.btn-danger {
+  background-color: var(--btn-danger-bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+}
+.btn-danger:hover {
+  background-color: var(--btn-danger-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Warning Button (Amber/Orange) */
+.btn-warning {
+  background-color: var(--btn-warning-bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+}
+.btn-warning:hover {
+  background-color: var(--btn-warning-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Info Button (Teal/Sky) */
+.btn-info {
+  background-color: var(--btn-info-bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+}
+.btn-info:hover {
+  background-color: var(--btn-info-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Purple Button */
+.btn-purple {
+  background-color: var(--btn-purple-bg) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #ffffff !important;
+}
+.btn-purple:hover {
+  background-color: var(--btn-purple-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Secondary / Light Button */
+.btn-secondary, .btn-light {
+  background-color: #ffffff !important;
+  border-color: var(--win-border-strong) !important;
+  color: var(--win-text-primary) !important;
+}
+.btn-secondary:hover, .btn-light:hover {
+  background-color: #f5f5f5 !important;
+  color: var(--win-text-primary) !important;
+}
+
+/* Small Button Fix */
+.btn-sm {
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* ==========================================================================
+   5. Windows 11 DataTables & DataGrids
+   ========================================================================== */
+.table-responsive, .dataTables_wrapper {
+  background: var(--win-surface) !important;
+  border: 1px solid var(--win-border) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 16px;
+  box-shadow: var(--win-shadow-sm) !important;
+}
+
+.table {
+  color: var(--win-text-primary) !important;
+  margin-bottom: 0 !important;
+}
+
+.table thead th {
+  background-color: var(--win-surface-alt) !important;
+  color: #424242 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  border-bottom: 2px solid var(--win-border) !important;
+  border-top: none !important;
+  padding: 12px 14px !important;
+}
+
+.table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f2f6fc !important;
+}
+
+.table td {
+  padding: 12px 14px !important;
+  vertical-align: middle !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  font-size: 13.5px;
+}
+
+/* DataTables Pagination */
+.page-item.active .page-link {
+  background-color: var(--win-accent) !important;
+  border-color: var(--win-accent) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.page-link {
+  color: var(--win-text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  margin: 0 2px;
+  border: 1px solid var(--win-border) !important;
+}
+
+.page-link:hover {
+  background-color: #f0f3f9 !important;
+}
+
+/* ==========================================================================
+   6. Windows 11 Form Controls & Inputs
+   ========================================================================== */
+.form-control, .custom-select, select {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d1d1 !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--win-text-primary) !important;
+  font-size: 13.5px !important;
+  padding: 8px 12px !important;
+  height: auto !important;
+  transition: all 0.15s ease !important;
+}
+
+.form-control:focus, .custom-select:focus, select:focus {
+  border-color: var(--win-accent) !important;
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.25) !important;
+  outline: none !important;
+}
+
+label {
+  font-weight: 500;
+  color: var(--win-text-primary);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   7. Windows 11 Modals
+   ========================================================================== */
+.modal-content {
+  border-radius: var(--radius-xl) !important;
+  border: 1px solid var(--win-border-strong) !important;
+  box-shadow: var(--win-shadow-lg) !important;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: var(--win-surface-alt) !important;
+  border-bottom: 1px solid var(--win-border) !important;
+  padding: 16px 24px !important;
+}
+
+.modal-title {
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  color: var(--win-text-primary) !important;
+}
+
+.modal-body {
+  padding: 24px !important;
+  background: #ffffff !important;
+}
+
+.modal-footer {
+  background: var(--win-surface-alt) !important;
+  border-top: 1px solid var(--win-border) !important;
+  padding: 14px 24px !important;
+}
+
+/* ==========================================================================
+   8. Windows 11 Badges & Tags
+   ========================================================================== */
+.badge {
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 5px 10px !important;
+  font-size: 11.5px !important;
+  letter-spacing: 0.2px;
+}
+
+.badge-primary {
+  background-color: var(--win-accent-light) !important;
+  color: var(--win-accent) !important;
+  border: 1px solid rgba(0, 120, 212, 0.2) !important;
+}
+
+.badge-success {
+  background-color: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1px solid rgba(22, 163, 74, 0.2) !important;
+}
+
+.badge-danger {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+.badge-warning {
+  background-color: #fef3c7 !important;
+  color: #b45309 !important;
+  border: 1px solid rgba(217, 119, 6, 0.2) !important;
+}
+
+/* ==========================================================================
+   9. Footer Styling
+   ========================================================================== */
+.footer {
+  background-color: var(--win-surface) !important;
+  border-top: 1px solid var(--win-border) !important;
+  color: var(--win-text-secondary) !important;
+  font-size: 12.5px;
+  padding: 14px 20px;
+}
+
+/* ==========================================================================
+   10. Windows 11 Login & Blank Pages
+   ========================================================================== */
+.account-card {
+  border-radius: var(--radius-xl) !important;
+  border: 1px solid var(--win-border-strong) !important;
+  box-shadow: var(--win-shadow-lg) !important;
+  overflow: hidden;
+  background: #ffffff !important;
+}
+
+.account-card .bg-primary {
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%) !important;
+  padding: 32px 24px !important;
+}
+
+.account-card .logo-admin h1 {
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  background: #ffffff;
+  color: var(--win-accent);
+  border-radius: 50%;
+  margin: 12px auto 0;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.account-card-content {
+  padding: 30px 28px 24px !important;
+}

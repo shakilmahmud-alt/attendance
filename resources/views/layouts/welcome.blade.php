@@ -12,7 +12,7 @@
     @include('layouts.head')
 </head>
 
-<body class="pb-0" style="background:#2a3142;">
+<body class="pb-0">
   
     @yield('content')
     @include('layouts.footer-script')

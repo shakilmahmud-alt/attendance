@@ -18,3 +18,6 @@
 <link href="{{ URL::asset('plugins/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- Responsive datatable examples -->
 <link href="{{ URL::asset('plugins/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+
+<!-- Windows 11 Fluent Theme -->
+<link href="{{ URL::asset('assets/css/windows11.css') }}" rel="stylesheet" type="text/css" />
