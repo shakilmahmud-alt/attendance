@@ -235,12 +235,12 @@ body {
 }
 
 .mini-stat {
-  background: var(--win-surface) !important;
+  background: #ffffff !important;
   border: 1px solid var(--win-border) !important;
   border-radius: var(--radius-lg) !important;
   box-shadow: var(--win-shadow-md) !important;
-  padding: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--win-text-primary) !important;
 }
 
 .mini-stat:hover {
@@ -248,13 +248,47 @@ body {
   box-shadow: var(--win-shadow-lg) !important;
 }
 
+.mini-stat.bg-primary {
+  background: #ffffff !important;
+  color: var(--win-text-primary) !important;
+}
+
+.mini-stat h5, .mini-stat h6, .mini-stat .font-16 {
+  color: #5d6679 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.3px;
+}
+
+.mini-stat h4, .mini-stat .font-500 {
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+  font-size: 26px !important;
+  margin-top: 6px !important;
+  margin-bottom: 8px !important;
+}
+
+.mini-stat .text-white-50 {
+  color: #6c757d !important;
+}
+
+.mini-stat .text-white {
+  color: #1a1a1a !important;
+}
+
 .mini-stat .mini-stat-img {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+  background: var(--win-accent-light) !important;
+  color: var(--win-accent) !important;
+  border-radius: 12px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mini-stat .mini-stat-img i, .mini-stat .mini-stat-img span {
+  color: var(--win-accent) !important;
 }
 
 /* ==========================================================================
